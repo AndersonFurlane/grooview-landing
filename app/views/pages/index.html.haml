@@ -1,0 +1,14 @@
+#header
+  %span.logo= image_tag('/assets/logo.png')
+  %span A lista que faltava
+#content
+  %p
+    %span Estamos tornando fácil dar e receber presentes dos seus amigos
+  %p
+    %span Fique sabendo quando você puder usar o Grooview
+  = flash[:notice]
+  = form_for @email, url: pages_path do |f|
+    = f.text_field :name, placeholder: 'Qual seu nome?'
+    = f.text_field :email, placeholder: 'Qual seu email?'
+    = f.submit 'Fique sabendo!'
+#footer

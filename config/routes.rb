@@ -1,4 +1,4 @@
 GrooviewLanding::Application.routes.draw do
-  root to: 'mails#index'
-  resources :mails, only: [:index, :new, :create]
+  root to: 'pages#index'
+  resources :pages, only: [:index, :new, :create]
 end
