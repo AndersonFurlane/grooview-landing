@@ -1,0 +1,15 @@
+# config/application.yml
+
+defaults: &defaults
+  mail:
+    username:
+    password:
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

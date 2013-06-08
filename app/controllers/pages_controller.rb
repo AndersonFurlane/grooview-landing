@@ -1,11 +1,12 @@
 class PagesController < ApplicationController
   def index
-    @email = Mail.new
+    @user = User.new
   end
 
   def create
-    @email = Mail.new(params[:mail])
-    if @email.save
+    @user = User.new(params[:user])
+    if @user.save
+      # UserMailer.welcome_email(mail).deliver # mail delivery
       flash[:notice] = 'Cadastrado com sucesso!'
       redirect_to pages_path
     else
