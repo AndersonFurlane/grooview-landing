@@ -1,14 +1,17 @@
 #header
   %span.logo= image_tag('/assets/logo_with_text.png')
+#slide
+  = image_tag('/assets/banner.jpg')
 #content
   %p
-    %span Estamos tornando fácil dar e receber presentes dos seus amigos
+    %span.highlight Estamos tornando fácil dar e receber presentes dos seus amigos
   %p
-    %span Fique sabendo quando você puder usar o Grooview
+    %span Fique sabendo quando você poderá usar o
+    %span.darker Grooview
 
   = flash[:notice]
-  = form_for @email, url: pages_path do |f|
+  = form_for @user, url: pages_path do |f|
     = f.text_field :name, placeholder: 'Qual seu nome?'
     = f.text_field :email, placeholder: 'Qual seu email?'
-    = f.submit 'Fique sabendo!'
+    = f.submit 'Fique sabendo!', class: 'submit'
 #footer
